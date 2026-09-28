@@ -146,7 +146,7 @@ Notas sobre as escolhas:
 ## Estrutura de pastas
 
 ```
-chatbot-rag/
+rag-legislacao-fiscal/
 ├── src/
 │   ├── config.py           # caminhos, modelos e variáveis de ambiente
 │   ├── ingestion.py        # carga dos .docx, chunking e construção do índice
@@ -179,8 +179,8 @@ Requisitos: Python 3.11 ou superior (testado em 3.13) e uma chave de API da
 ### 1. Clonar o repositório
 
 ```bash
-git clone https://github.com/brunodt98/chatbot-rag.git
-cd chatbot-rag
+git clone https://github.com/brunodt98/rag-legislacao-fiscal.git
+cd rag-legislacao-fiscal
 ```
 
 ### 2. Criar o ambiente virtual e instalar as dependências
