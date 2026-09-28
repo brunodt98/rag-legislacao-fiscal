@@ -2,11 +2,16 @@
 
 import os
 import sys
+from pathlib import Path
+
+# Permite rodar direto (`python app/cli.py`, `streamlit run app/streamlit_app.py`)
+# com a raiz do projeto no sys.path, para que `import src` funcione.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
+import src  # noqa: E402
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
-
-import rag_core
 
 
 def mostrar_relatorio_latencia(resultado):
@@ -37,20 +42,20 @@ def main():
         sys.exit(1)
 
     try:
-        vectorstore = rag_core.get_vectorstore()
-    except rag_core.VectorstoreNaoEncontrado as e:
+        vectorstore = src.get_vectorstore()
+    except src.VectorstoreNaoEncontrado as e:
         print(f"❌ {e}")
         sys.exit(1)
 
-    llm = rag_core.build_llm(api_key)
+    llm = src.build_llm(api_key)
 
     print("=" * 60)
     print("CHATBOT PI-V")
     print("=" * 60)
-    print(f"\n🤖 Modelo: {rag_core.DEFAULT_MODEL}")
+    print(f"\n🤖 Modelo: {src.DEFAULT_MODEL}")
     print("🔗 Provedor: OpenRouter")
     print("📚 Banco vetorial: FAISS")
-    print(f"🧠 Embeddings: {rag_core.EMBEDDING_MODEL}")
+    print(f"🧠 Embeddings: {src.EMBEDDING_MODEL}")
     print("\nArquitetura:")
     print("Pergunta -> HyDE -> Embedding -> FAISS -> Documentos -> LLM -> Resposta")
     print("\nDigite 'sair' para encerrar.")
@@ -70,7 +75,7 @@ def main():
         try:
             print("\n🧠 Gerando hipótese HyDE, buscando documentos e respondendo...")
 
-            resultado = rag_core.responder_pergunta(
+            resultado = src.responder_pergunta(
                 llm, vectorstore, pergunta, historico=historico, k=5
             )
 

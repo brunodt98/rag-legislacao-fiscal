@@ -6,7 +6,7 @@ gera 2 chamadas ao LLM (hipótese HyDE + resposta final).
 
 Para cada pergunta, registra: resposta gerada, se as keywords esperadas
 aparecem na resposta (proxy de assertividade), tempos por etapa, tokens
-consumidos e custo estimado (ver PRECO_USD_POR_MILHAO_* no rag_core.py —
+consumidos e custo estimado (ver PRECO_USD_POR_MILHAO_* no src.py —
 ajuste esses valores para o preço real do modelo escolhido).
 
 Uso:
@@ -23,7 +23,7 @@ if hasattr(sys.stdout, "reconfigure"):
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-import rag_core  # noqa: E402
+import src  # noqa: E402
 
 
 DATASET_PATH = Path(__file__).parent / "dataset.json"
@@ -42,8 +42,8 @@ def main(k=5):
         sys.exit(1)
 
     print("Carregando embeddings + vectorstore...")
-    vectorstore = rag_core.get_vectorstore()
-    llm = rag_core.build_llm(api_key)
+    vectorstore = src.get_vectorstore()
+    llm = src.build_llm(api_key)
 
     perguntas = carregar_dataset()
     resultados = []
@@ -54,7 +54,7 @@ def main(k=5):
         print(f"[{item['id']}] {item['pergunta']}")
 
         try:
-            r = rag_core.responder_pergunta(llm, vectorstore, item["pergunta"], k=k)
+            r = src.responder_pergunta(llm, vectorstore, item["pergunta"], k=k)
         except Exception as e:
             print(f"    ❌ erro: {e}")
             resultados.append({"id": item["id"], "erro": str(e)})

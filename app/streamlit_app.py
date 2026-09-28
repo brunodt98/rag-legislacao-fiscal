@@ -1,10 +1,16 @@
 """Interface web (Streamlit) do chatbot RAG (HyDE + FAISS + OpenRouter)."""
 
 import os
+import sys
+from pathlib import Path
 
 import streamlit as st
 
-import rag_core
+# Permite rodar direto (`python app/cli.py`, `streamlit run app/streamlit_app.py`)
+# com a raiz do projeto no sys.path, para que `import src` funcione.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
+import src  # noqa: E402
 
 
 st.set_page_config(page_title="Chatbot PI-V (RAG + HyDE)", layout="wide")
@@ -16,12 +22,12 @@ st.set_page_config(page_title="Chatbot PI-V (RAG + HyDE)", layout="wide")
 
 @st.cache_resource(show_spinner="Carregando embeddings e vectorstore...")
 def carregar_vectorstore():
-    return rag_core.get_vectorstore()
+    return src.get_vectorstore()
 
 
 @st.cache_resource(show_spinner=False)
 def carregar_llm(api_key, model, temperature):
-    return rag_core.build_llm(api_key, model=model, temperature=temperature)
+    return src.build_llm(api_key, model=model, temperature=temperature)
 
 
 # ============================================================
@@ -37,11 +43,11 @@ api_key_input = st.sidebar.text_input(
     help="Não é salva em disco. Também pode ser definida via .env.",
 )
 
-modelo = st.sidebar.text_input("Modelo (OpenRouter)", value=rag_core.DEFAULT_MODEL)
+modelo = st.sidebar.text_input("Modelo (OpenRouter)", value=src.DEFAULT_MODEL)
 
 temperatura = st.sidebar.slider(
     "Temperatura", min_value=0.0, max_value=1.0,
-    value=rag_core.DEFAULT_TEMPERATURE, step=0.05,
+    value=src.DEFAULT_TEMPERATURE, step=0.05,
 )
 
 k_documentos = st.sidebar.slider(
@@ -59,8 +65,8 @@ if st.sidebar.button("Limpar conversa"):
 
 st.sidebar.markdown("---")
 st.sidebar.caption(
-    f"Embeddings: `{rag_core.EMBEDDING_MODEL}`\n\n"
-    f"Vector store: FAISS local (`hyde/vectorstore`)"
+    f"Embeddings: `{src.EMBEDDING_MODEL}`\n\n"
+    f"Vector store: FAISS local (`vectorstore/`)"
 )
 
 
@@ -81,7 +87,7 @@ st.caption(
 
 try:
     vectorstore = carregar_vectorstore()
-except rag_core.VectorstoreNaoEncontrado as e:
+except src.VectorstoreNaoEncontrado as e:
     st.error(str(e))
     st.stop()
 
@@ -125,7 +131,7 @@ if pergunta:
             try:
                 llm = carregar_llm(api_key_input, modelo, temperatura)
 
-                resultado = rag_core.responder_pergunta(
+                resultado = src.responder_pergunta(
                     llm,
                     vectorstore,
                     pergunta,
@@ -133,7 +139,7 @@ if pergunta:
                     k=k_documentos,
                 )
 
-            except rag_core.ChaveApiAusente as e:
+            except src.ChaveApiAusente as e:
                 st.error(str(e))
                 st.stop()
 

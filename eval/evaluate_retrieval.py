@@ -24,7 +24,7 @@ if hasattr(sys.stdout, "reconfigure"):
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-import rag_core  # noqa: E402
+import src  # noqa: E402
 
 
 DATASET_PATH = Path(__file__).parent / "dataset.json"
@@ -36,7 +36,7 @@ def carregar_dataset():
 
 
 def avaliar_pergunta(vectorstore, pergunta_texto, keywords, k):
-    documentos, tempo = rag_core.buscar_documentos_por_texto(
+    documentos, tempo = src.buscar_documentos_por_texto(
         vectorstore, pergunta_texto, k=k
     )
 
@@ -58,7 +58,7 @@ def avaliar_pergunta(vectorstore, pergunta_texto, keywords, k):
 
 def main(k=5):
     print("Carregando embeddings + vectorstore (pode demorar um pouco)...")
-    vectorstore = rag_core.get_vectorstore()
+    vectorstore = src.get_vectorstore()
 
     perguntas = carregar_dataset()
 

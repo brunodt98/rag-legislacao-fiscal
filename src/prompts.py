@@ -1,12 +1,10 @@
 """Carrega os prompts versionados de prompts.yaml."""
 
-from pathlib import Path
 from string import Formatter
 
 import yaml
 
-
-PROMPTS_FILE = Path(__file__).parent / "prompts.yaml"
+from .config import PROMPTS_FILE
 
 PLACEHOLDERS_ESPERADOS = {
     "hyde": {"user_input"},
