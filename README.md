@@ -158,6 +158,7 @@ rag-legislacao-fiscal/
 │   └── prompts.yaml        # templates versionados (HyDE e resposta)
 ├── app/
 │   ├── streamlit_app.py    # interface web
+│   ├── theme.py            # identidade visual (tokens de cor e CSS)
 │   └── cli.py              # interface de linha de comando
 ├── data/
 │   └── documentos/         # fontes .docx de ICMS/SP
@@ -167,6 +168,8 @@ rag-legislacao-fiscal/
 │   ├── evaluate_retrieval.py     # recall@k, sem custo de API
 │   ├── evaluate_generation.py    # pipeline completo, requer API key
 │   └── resultado_retrieval.json  # saída da última avaliação de recuperação
+├── .streamlit/
+│   └── config.toml         # tema do Streamlit
 ├── requirements.txt
 └── .env.example
 ```
