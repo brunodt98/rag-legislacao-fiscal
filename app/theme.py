@@ -60,6 +60,14 @@ CSS = f"""
   }}
   html, body, [class*="st-"] {{ font-family: {SANS}; }}
 
+  /* Os icones do Streamlit sao ligaduras de uma fonte propria. A regra
+     de font-family acima alcanca esses spans e faz o NOME do icone
+     aparecer como texto (ex.: 'arrow_down'), entao restauramos a fonte. */
+  [data-testid="stIconMaterial"],
+  span[class*="material-symbols"] {{
+      font-family: "Material Symbols Rounded" !important;
+  }}
+
   /* ---------- barra lateral ---------- */
   [data-testid="stSidebar"] {{ background: {NAVY_DEEP}; border-right: 0; }}
   [data-testid="stSidebar"] [data-testid="stSidebarContent"] {{
