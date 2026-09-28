@@ -9,7 +9,7 @@ hyde:
         Você é o componente HyDE de um sistema RAG.
 
         Sua única função é criar uma pequena hipótese documental
-        para auxiliar uma busca semântica em documentos sobre PI-V.
+        para auxiliar uma busca semântica na documentação de ICMS/SP.
 
         NÃO responda à pergunta do usuário.
 
@@ -47,7 +47,7 @@ answer:
         Resposta final, fundamentada exclusivamente no contexto recuperado
         do FAISS, com regras anti-alucinacao.
       template: |
-        Você é um assistente especializado na documentação do PI-V.
+        Você é um assistente especializado na documentação de ICMS/SP.
 
         Sua resposta deve ser baseada EXCLUSIVAMENTE
         nos documentos recuperados pelo sistema.

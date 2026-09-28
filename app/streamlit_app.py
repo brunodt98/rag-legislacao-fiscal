@@ -13,7 +13,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import src  # noqa: E402
 
 
-st.set_page_config(page_title="Chatbot PI-V (RAG + HyDE)", layout="wide")
+st.set_page_config(page_title="Chatbot RAG + HyDE (ICMS/SP)", layout="wide")
 
 
 # ============================================================
@@ -74,7 +74,7 @@ st.sidebar.caption(
 # CABEÇALHO
 # ============================================================
 
-st.title("🤖 Chatbot PI-V — RAG com HyDE")
+st.title("🤖 Chatbot RAG com HyDE — ICMS/SP")
 st.caption(
     "Responde perguntas com base exclusivamente nos documentos indexados "
     "(FAISS). Pipeline: Pergunta → HyDE → Embedding → FAISS → Contexto → LLM."

@@ -50,7 +50,7 @@ def main():
     llm = src.build_llm(api_key)
 
     print("=" * 60)
-    print("CHATBOT PI-V")
+    print("CHATBOT RAG - ICMS/SP")
     print("=" * 60)
     print(f"\n🤖 Modelo: {src.DEFAULT_MODEL}")
     print("🔗 Provedor: OpenRouter")

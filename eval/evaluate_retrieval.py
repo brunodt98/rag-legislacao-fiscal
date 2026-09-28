@@ -5,11 +5,9 @@ Avalia a QUALIDADE DA RECUPERAÇÃO (retrieval) do FAISS, sem depender do LLM
 Mede recall@k: para cada pergunta do dataset, verifica se ao menos uma das
 keywords esperadas aparece em algum dos k chunks recuperados.
 
-Compara duas estratégias de busca:
-  - baseline: embedding direto da pergunta do usuário
-  - hyde_simulado: embedding de uma hipótese HyDE escrita à mão (aproximação
-    offline do que o LLM geraria), para estimar o ganho do HyDE sem gastar
-    tokens de API.
+A busca avaliada aqui é o baseline (embedding direto da pergunta do usuário),
+que isola a qualidade do índice e do chunking da qualidade do LLM. Para medir
+o pipeline com HyDE, use evaluate_generation.py.
 
 Uso:
     python eval/evaluate_retrieval.py
