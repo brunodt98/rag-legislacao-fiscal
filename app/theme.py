@@ -114,6 +114,27 @@ CSS = f"""
       border-color: {GOLD}; color: #fff;
   }}
 
+  /* ajuda dentro da lateral (como obter a chave) */
+  [data-testid="stSidebar"] [data-testid="stExpander"] {{
+      border: 1px solid #2a4b7c; border-radius: 8px; background: #112b52;
+  }}
+  [data-testid="stSidebar"] [data-testid="stExpander"] summary {{
+      font-size: .78rem; color: {ON_NAVY};
+  }}
+  [data-testid="stSidebar"] [data-testid="stExpander"] p,
+  [data-testid="stSidebar"] [data-testid="stExpander"] li {{
+      font-size: .76rem !important; color: {ON_NAVY}; line-height: 1.55;
+  }}
+  [data-testid="stSidebar"] [data-testid="stExpander"] a {{
+      color: {GOLD}; text-decoration: underline;
+  }}
+  [data-testid="stSidebar"] [data-testid="stExpander"] code {{
+      background: #0b1f3d; color: #fff; font-size: .72rem; padding: .05rem .3rem;
+  }}
+  [data-testid="stSidebar"] [data-testid="stExpander"] ol {{
+      padding-left: 1.05rem; margin: .2rem 0;
+  }}
+
   /* ---------- cabecalho ---------- */
   .eyebrow {{
       font-size: .7rem; font-weight: 600; letter-spacing: .09em;

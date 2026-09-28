@@ -58,6 +58,21 @@ with st.sidebar:
         help="Não é salva em disco. Também pode ser definida via .env.",
     )
 
+    with st.expander("Não tem chave? Veja como conseguir"):
+        st.markdown(
+            """1. Crie uma conta em [openrouter.ai](https://openrouter.ai) — dá para
+   entrar com Google ou GitHub.
+2. Abra [openrouter.ai/keys](https://openrouter.ai/keys) e clique em
+   **Create Key**.
+3. Dê um nome e copie a chave. Ela começa com `sk-or-` e só aparece uma
+   vez; se perder, gere outra.
+4. Cole no campo acima, ou salve no `.env` como
+   `OPENROUTER_API_KEY=sk-or-...` para não precisar colar toda vez.
+
+Modelos pagos exigem crédito na conta. Para testar sem colocar crédito,
+troque o campo **Modelo** por um que termine em `:free`."""
+        )
+
     modelo = st.text_input("Modelo (OpenRouter)", value=src.DEFAULT_MODEL)
 
     temperatura = st.slider(

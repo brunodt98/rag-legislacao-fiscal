@@ -209,7 +209,19 @@ pip install -r requirements.txt
 > O PyTorch, trazido pelo `sentence-transformers`, tem arquivos internos com
 > caminhos longos que estouram o limite de 260 caracteres do Windows.
 
-### 3. Configurar a chave de API
+### 3. Obter a chave da OpenRouter
+
+1. Crie uma conta em [openrouter.ai](https://openrouter.ai) — dá para entrar
+   com Google ou GitHub.
+2. Abra [openrouter.ai/keys](https://openrouter.ai/keys) e clique em
+   **Create Key**.
+3. Dê um nome à chave e copie o valor. Ela começa com `sk-or-` e só é exibida
+   uma vez; se perder, basta gerar outra.
+
+Modelos pagos exigem crédito na conta. Para testar sem adicionar crédito,
+troque o valor de `MODEL` por um modelo terminado em `:free`.
+
+### 4. Configurar a chave
 
 ```bash
 cp .env.example .env
@@ -220,7 +232,10 @@ No Windows: `Copy-Item .env.example .env`.
 Preencha `OPENROUTER_API_KEY` no `.env`. As outras variáveis são opcionais e
 têm valores padrão em [src/config.py](src/config.py).
 
-### 4. Rodar a interface web
+A chave também pode ser colada direto na barra lateral da interface web, que
+traz o mesmo passo a passo acima.
+
+### 5. Rodar a interface web
 
 ```bash
 streamlit run app/streamlit_app.py
@@ -230,13 +245,13 @@ Abre em `http://localhost:8501`. A chave de API também pode ser colada na
 barra lateral, que permite ainda trocar o modelo, a temperatura e o número de
 documentos recuperados (`k`).
 
-### 5. Rodar pela linha de comando (opcional)
+### 6. Rodar pela linha de comando (opcional)
 
 ```bash
 python app/cli.py
 ```
 
-### 6. Reconstruir o índice (opcional)
+### 7. Reconstruir o índice (opcional)
 
 O índice em `vectorstore/` já vem pronto. Só é preciso reconstruir ao
 adicionar ou trocar documentos em `data/documentos/`:
@@ -245,7 +260,7 @@ adicionar ou trocar documentos em `data/documentos/`:
 python -m src.ingestion
 ```
 
-### 7. Rodar as avaliações
+### 8. Rodar as avaliações
 
 ```bash
 python eval/evaluate_retrieval.py     # recall@k, não consome API
