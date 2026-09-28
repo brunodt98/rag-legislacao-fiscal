@@ -1,5 +1,17 @@
+# Segredos
 .env
+
+# Python
 __pycache__/
-*.pyc
-_preview/
+*.py[cod]
+
+# Ambientes virtuais
+.venv/
+venv/
+env/
+
+# Resultado da avaliacao que depende de API key (gerado localmente)
+eval/resultado_generation.json
+
+# Notas locais de apresentacao
 APRESENTACAO.md
