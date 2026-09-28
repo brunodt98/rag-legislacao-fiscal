@@ -114,25 +114,26 @@ CSS = f"""
       border-color: {GOLD}; color: #fff;
   }}
 
-  /* ajuda dentro da lateral (como obter a chave) */
-  [data-testid="stSidebar"] [data-testid="stExpander"] {{
-      border: 1px solid #2a4b7c; border-radius: 8px; background: #112b52;
+  /* ajuda fixa na lateral: como obter a chave */
+  .side-help {{
+      background: #112b52; border: 1px solid #2a4b7c; border-radius: 8px;
+      padding: .7rem .8rem; margin-top: .55rem;
   }}
-  [data-testid="stSidebar"] [data-testid="stExpander"] summary {{
-      font-size: .78rem; color: {ON_NAVY};
+  .side-help .tit {{
+      font-size: .72rem; font-weight: 600; color: #fff; margin-bottom: .35rem;
   }}
-  [data-testid="stSidebar"] [data-testid="stExpander"] p,
-  [data-testid="stSidebar"] [data-testid="stExpander"] li {{
-      font-size: .76rem !important; color: {ON_NAVY}; line-height: 1.55;
+  .side-help ol {{ margin: 0; padding-left: 1.05rem; }}
+  .side-help li {{
+      font-size: .72rem; color: {ON_NAVY}; line-height: 1.5; margin-bottom: .22rem;
   }}
-  [data-testid="stSidebar"] [data-testid="stExpander"] a {{
-      color: {GOLD}; text-decoration: underline;
+  .side-help a {{ color: {GOLD}; text-decoration: underline; font-weight: 500; }}
+  .side-help code {{
+      background: #0b1f3d; color: #fff; font-size: .68rem;
+      padding: .04rem .26rem; border-radius: 3px;
   }}
-  [data-testid="stSidebar"] [data-testid="stExpander"] code {{
-      background: #0b1f3d; color: #fff; font-size: .72rem; padding: .05rem .3rem;
-  }}
-  [data-testid="stSidebar"] [data-testid="stExpander"] ol {{
-      padding-left: 1.05rem; margin: .2rem 0;
+  .side-help .nota {{
+      font-size: .68rem; color: {ON_NAVY_DIM}; line-height: 1.45;
+      margin: .45rem 0 0; padding-top: .45rem; border-top: 1px solid #2a4b7c;
   }}
 
   /* ---------- cabecalho ---------- */
@@ -230,6 +231,28 @@ CSS = f"""
 def aplicar():
     """Injeta a folha de estilo. Chamar uma vez, logo após set_page_config."""
     st.markdown(CSS, unsafe_allow_html=True)
+
+
+def ajuda_chave():
+    """Passo a passo para obter a chave da OpenRouter, fixo na lateral."""
+    st.markdown(
+        "<div class='side-help'>"
+        "<div class='tit'>Não tem chave?</div>"
+        "<ol>"
+        "<li>Crie uma conta em <a href='https://openrouter.ai'"
+        " target='_blank'>openrouter.ai</a> (Google ou GitHub).</li>"
+        "<li>Abra <a href='https://openrouter.ai/keys'"
+        " target='_blank'>openrouter.ai/keys</a> e clique em "
+        "<b>Create Key</b>.</li>"
+        "<li>Copie a chave (começa com <code>sk-or-</code> e aparece uma vez "
+        "só) e cole no campo acima.</li>"
+        "</ol>"
+        "<p class='nota'>Modelos pagos exigem crédito na conta. "
+        "Para testar sem crédito, use um modelo terminado em "
+        "<code>:free</code>.</p>"
+        "</div>",
+        unsafe_allow_html=True,
+    )
 
 
 def cabecalho(eyebrow, titulo, lede):
