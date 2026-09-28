@@ -4,6 +4,14 @@ Chatbot que responde perguntas sobre legislação de ICMS de São Paulo usando
 apenas o conteúdo de documentos indexados localmente, com recuperação
 aumentada por HyDE (Hypothetical Document Embeddings).
 
+**App no ar:**
+[rag-legislacao-fiscal.streamlit.app](https://rag-legislacao-fiscal-tecwbquhvsuwqkmjahvf5c.streamlit.app)
+
+> Hospedado no plano gratuito do Streamlit Cloud, que hiberna o app após um
+> período sem acesso. Se aparecer a tela de app adormecido, basta clicar no
+> botão e aguardar alguns segundos. Para conversar é preciso informar uma
+> chave da OpenRouter na barra lateral — o passo a passo está lá.
+
 ## Problema
 
 Consultar legislação tributária significa procurar um trecho específico em
