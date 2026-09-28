@@ -1,7 +1,7 @@
 {
   "k": 5,
   "recall_at_k": 0.9166666666666666,
-  "tempo_medio_segundos": 0.752466974999758,
+  "tempo_medio_segundos": 0.21157691666659653,
   "resultados": [
     {
       "id": "q01",
@@ -12,10 +12,10 @@
           "circulação de mercadorias",
           "transporte interestadual"
         ],
-        "tempo": 1.2283754000000044,
+        "tempo": 0.3112050999998246,
         "fontes": [
-          "Documento sem título (5) (1).docx",
-          "ICMS_SP_material_resumido_com_formulas_legislacao (1).docx"
+          "icms_sp_base_calculo_e_substituicao_tributaria.docx",
+          "icms_sp_material_resumido_formulas_legislacao.docx"
         ]
       }
     },
@@ -28,10 +28,10 @@
           "habitual",
           "intuito comercial"
         ],
-        "tempo": 0.6627198999995016,
+        "tempo": 0.12634039999966262,
         "fontes": [
-          "Documento sem título (5) (1).docx",
-          "ICMS_SP_material_resumido_com_formulas_legislacao (1).docx"
+          "icms_sp_base_calculo_e_substituicao_tributaria.docx",
+          "icms_sp_material_resumido_formulas_legislacao.docx"
         ]
       }
     },
@@ -43,10 +43,10 @@
         "keywords_encontradas": [
           "valor da operação"
         ],
-        "tempo": 0.7515279999988707,
+        "tempo": 0.19348859999990964,
         "fontes": [
-          "Documento sem título (5) (1).docx",
-          "ICMS_SP_material_resumido_com_formulas_legislacao (1).docx"
+          "icms_sp_base_calculo_e_substituicao_tributaria.docx",
+          "icms_sp_material_resumido_formulas_legislacao.docx"
         ]
       }
     },
@@ -58,10 +58,10 @@
         "keywords_encontradas": [
           "frete"
         ],
-        "tempo": 0.7197990000004211,
+        "tempo": 0.2714958999999908,
         "fontes": [
-          "Documento sem título (5) (1).docx",
-          "ICMS_SP_material_resumido_com_formulas_legislacao (1).docx"
+          "icms_sp_base_calculo_e_substituicao_tributaria.docx",
+          "icms_sp_material_resumido_formulas_legislacao.docx"
         ]
       }
     },
@@ -71,10 +71,10 @@
       "baseline": {
         "acertou": false,
         "keywords_encontradas": [],
-        "tempo": 0.8117177999993146,
+        "tempo": 0.22107210000012856,
         "fontes": [
-          "Documento sem título (5) (1).docx",
-          "ICMS_SP_material_resumido_com_formulas_legislacao (1).docx"
+          "icms_sp_base_calculo_e_substituicao_tributaria.docx",
+          "icms_sp_material_resumido_formulas_legislacao.docx"
         ]
       }
     },
@@ -87,10 +87,10 @@
           "valor da entrada mais recente",
           "custo da mercadoria produzida"
         ],
-        "tempo": 0.8116590999998152,
+        "tempo": 0.21960149999995338,
         "fontes": [
-          "Documento sem título (5) (1).docx",
-          "ICMS_SP_material_resumido_com_formulas_legislacao (1).docx"
+          "icms_sp_base_calculo_e_substituicao_tributaria.docx",
+          "icms_sp_material_resumido_formulas_legislacao.docx"
         ]
       }
     },
@@ -102,10 +102,10 @@
         "keywords_encontradas": [
           "valor corrente do serviço"
         ],
-        "tempo": 0.6380802000003314,
+        "tempo": 0.1959329000001162,
         "fontes": [
-          "Documento sem título (5) (1).docx",
-          "ICMS_SP_material_resumido_com_formulas_legislacao (1).docx"
+          "icms_sp_base_calculo_e_substituicao_tributaria.docx",
+          "icms_sp_material_resumido_formulas_legislacao.docx"
         ]
       }
     },
@@ -117,10 +117,10 @@
         "keywords_encontradas": [
           "operações"
         ],
-        "tempo": 0.6440796999995655,
+        "tempo": 0.22028539999973873,
         "fontes": [
-          "Documento sem título (5) (1).docx",
-          "ICMS_SP_material_resumido_com_formulas_legislacao (1).docx"
+          "icms_sp_base_calculo_e_substituicao_tributaria.docx",
+          "icms_sp_material_resumido_formulas_legislacao.docx"
         ]
       }
     },
@@ -132,10 +132,10 @@
         "keywords_encontradas": [
           "margem"
         ],
-        "tempo": 0.45784439999988535,
+        "tempo": 0.19866339999998672,
         "fontes": [
-          "Documento sem título (5) (1).docx",
-          "ICMS_SP_material_resumido_com_formulas_legislacao (1).docx"
+          "icms_sp_base_calculo_e_substituicao_tributaria.docx",
+          "icms_sp_material_resumido_formulas_legislacao.docx"
         ]
       }
     },
@@ -149,10 +149,10 @@
           "alq intra",
           "iva-st original"
         ],
-        "tempo": 0.5319958000000042,
+        "tempo": 0.1932188999999198,
         "fontes": [
-          "Documento sem título (5) (1).docx",
-          "ICMS_SP_material_resumido_com_formulas_legislacao (1).docx"
+          "icms_sp_base_calculo_e_substituicao_tributaria.docx",
+          "icms_sp_material_resumido_formulas_legislacao.docx"
         ]
       }
     },
@@ -164,10 +164,10 @@
         "keywords_encontradas": [
           "10 dias"
         ],
-        "tempo": 1.204421700000239,
+        "tempo": 0.206071300000076,
         "fontes": [
-          "Documento sem título (5) (1).docx",
-          "ICMS_SP_material_resumido_com_formulas_legislacao (1).docx"
+          "icms_sp_base_calculo_e_substituicao_tributaria.docx",
+          "icms_sp_material_resumido_formulas_legislacao.docx"
         ]
       }
     },
@@ -182,10 +182,10 @@
           "frete",
           "seguro"
         ],
-        "tempo": 0.5673826999991434,
+        "tempo": 0.18154749999985142,
         "fontes": [
-          "Documento sem título (5) (1).docx",
-          "ICMS_SP_material_resumido_com_formulas_legislacao (1).docx"
+          "icms_sp_base_calculo_e_substituicao_tributaria.docx",
+          "icms_sp_material_resumido_formulas_legislacao.docx"
         ]
       }
     }

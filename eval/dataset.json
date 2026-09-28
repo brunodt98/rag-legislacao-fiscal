@@ -1,5 +1,5 @@
 {
-  "descricao": "Conjunto de perguntas de avaliação sobre ICMS/SP, extraídas manualmente do conteúdo real de hyde/documentos/. Cada item traz palavras-chave que DEVEM aparecer nos chunks recuperados (avaliação de retrieval) e, quando aplicável, na resposta final gerada pelo LLM (avaliação de geração).",
+  "descricao": "Conjunto de perguntas de avaliação sobre ICMS/SP, extraídas manualmente do conteúdo real de data/documentos/. Cada item traz palavras-chave que DEVEM aparecer nos chunks recuperados (avaliação de retrieval) e, quando aplicável, na resposta final gerada pelo LLM (avaliação de geração).",
   "perguntas": [
     {
       "id": "q01",
